@@ -5,7 +5,7 @@ author:
   - name: "Joshua Dunlap"
     affiliations:
       - name: "Finding and Measuring the Temporality Dimension in Static Word Embedding Models"
-description: "This project will create a dimension of "temporality"---basically how future or past-oriented a concept is---in a word embedding model."
+description: "This project will create a dimension of emporality---basically how future or past-oriented a concept is---in a word embedding model."
 format:
   html:
     code-tools: true
