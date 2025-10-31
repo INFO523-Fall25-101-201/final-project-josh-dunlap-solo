@@ -2,10 +2,10 @@
 title: "Proposal title"
 subtitle: "Proposal"
 author: 
-  - name: "Team Name - Team member 1, Team member 2,..."
+  - name: "Joshua Dunlap"
     affiliations:
-      - name: "College of Information Science, University of Arizona"
-description: "Project description"
+      - name: "Finding and Measuring the Temporality Dimension in Static Word Embedding Models"
+description: "This project will create a dimension of "temporality"---basically how future or past-oriented a concept is---in a word embedding model."
 format:
   html:
     code-tools: true
@@ -30,16 +30,48 @@ import numpy as np
 ```{python}
 #| label: load-dataset
 #| message: false
+import gensim.downloader as api
+from numpy import dot
+from numpy.linalg import norm
+import numpy as np
+
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import pandas as pd
+model = api.load("glove-wiki-gigaword-100")  # 100d GloVe vectors
+
+
 ```
 
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
+I currently have access to glove-wiki-gigaword-100. If I am unable to use a dataset more directly relevant to my research, I will use glove-wiki-gigaword-100. It is a relevant dataset because it has been used as a standard static word embedding model for all sorts of NLP tasks, and it is trained on enough text that if the temporality dimension is shown to work in the context of glove-wiki-gigaword-100 then show that at least it will work the gold standard NLP environment.
 
-Make sure to load the data and use inline code for some of this information.
+My hope, however, is to access a dataset more directly suitable to my research. My ideal would be over 100 years of historical newspaper data and I’m currently pursuing several options to access a dataset like this. If I gain access I will also need to train static word embedding models on the data, which will add some amount of technical wrangling on the front end. 
+
 
 ## Questions
 
-The two questions you want to answer.
+Can I find a temporality dimension in the data? Is this dimension robust enough to solve analogy problems?
 
 ## Analysis plan
 
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+Can I find a temporality dimension in the data?
+I will answer this question by emulating past research which has shown that it is possible to identify "cultural dimensions" running through word embedding models using a technique where you subtract and average a bunch of paired antonyms related to a cultural concept. So, for example, they find the "affluence" dimension that runs through the model by subtracting the vector for "rich" from the vector for "poor", the vector for "wealthy" from the vector for "impoverished", etc. This then allows them to place other concepts in relation to this "affluence" dimension, finding, for example, that "tennis" and "opera" are on the wealthy side of the affluence plane.
+
+I am going to do this in relation to temporality; subtracting "future" from "past", "modern" from "vintage," etc. The new variable to be created will be this vector, which concepts can be measured against (is “spaceship” on the future side? is “archive” on the past side?) External data that might be necessary is incorporating information from current and historical thesauri in order to create a sufficiently robust set of paired antonyms. 
+
+Is this dimension robust enough to solve analogy problems?
+One of the most famous examples of the semantic relationships embedded in these static models is the vector for “king” minus the vector for “man” plus the vector for “woman” equals “queen.” The underlying principle is that semantic relationships are so strongly embedded that analogies can be “mathematically solved.” 
+
+```{python}
+#| label: load-dataset
+#| message: false
+result = model.most_similar(positive=['king', 'woman'], negative=['man'], topn=5)
+
+for word, similarity in result:
+    print(f"{word}: {similarity:.3f}")
+
+
+```
+
+Can this be extended to analogies that rely on temporality? Can I show that the temporality dimension aligns in predictable ways with semantic expectations?
+
