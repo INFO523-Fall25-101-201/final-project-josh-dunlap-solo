@@ -51,9 +51,13 @@ Update 11/13
 
 I am working with a research librarian at the university to try to use this dataset: ProQuest Historical Newspapers Collections: The New York Times (1851-1936), which is much closer to the dataset that I intend to eventually use for this research project. I'm not sure if I will have access in time to complete the project with this data, but progress is being made on this front!
 
+One important note about whichever dataset is used is that it will necessarily embody the cultural position and biases of the corpus. Groundbreaking studies have demonstrated, for example, the gender bias present in many large text corpora. For the purposes of this study, this means that I will need to be aware that the temporality dimension that is found will be one that is reflective of the viewpoint of the corpus, not a universal depiction of temporality in the English language.
+
 ## Questions
 
 Can I find a temporality dimension in the data? Is this dimension robust enough to solve analogy problems?
+
+I am interested in these questions at a broad level because I am curious about the history of future visioning. In order to understand how people in the past thought about the future, it will be worthwhile to have decade-specific embeddings of temporality so that we can understand what was considered futuristic at different points in time. More specifically, I'm interested in finding a temporality dimension in large text corpora for a specific research project related to understanding people's shifting conceptions of "utopian" visioning---how this concept shifts back and forth between being past and future-oriented. My hypothesis is that this is related to broader cycles of expanding and contracting senses of what is politically possible and desirable.
 
 ## Analysis plan
 
@@ -64,6 +68,8 @@ I am going to do this in relation to temporality; subtracting "future" from "pas
 
 Is this dimension robust enough to solve analogy problems?
 One of the most famous examples of the semantic relationships embedded in these static models is the vector for “king” minus the vector for “man” plus the vector for “woman” equals “queen.” The underlying principle is that semantic relationships are so strongly embedded that analogies can be “mathematically solved.” 
+
+Can these analogy problems be extended? If we invert the position of "steamboat" on the temporality dimension would we find nearest neighbor words like "submarine." What about if we take the inverse temporality position of "e-reader"? Might we find something like "papyrus"?
 
 ```{python}
 #| label: load-dataset
