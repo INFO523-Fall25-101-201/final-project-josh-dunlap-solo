@@ -47,6 +47,9 @@ I currently have access to glove-wiki-gigaword-100. If I am unable to use a data
 
 My hope, however, is to access a dataset more directly suitable to my research. My ideal would be over 100 years of historical newspaper data and I’m currently pursuing several options to access a dataset like this. If I gain access I will also need to train static word embedding models on the data, which will add some amount of technical wrangling on the front end. 
 
+Update 11/13
+
+I am working with a research librarian at the university to try to use this dataset: ProQuest Historical Newspapers Collections: The New York Times (1851-1936), which is much closer to the dataset that I intend to eventually use for this research project. I'm not sure if I will have access in time to complete the project with this data, but progress is being made on this front!
 
 ## Questions
 
