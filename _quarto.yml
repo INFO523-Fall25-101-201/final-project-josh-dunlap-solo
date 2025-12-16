@@ -6,7 +6,7 @@ website:
   navbar:
     right:
       - icon: github
-        href: https://github.com/INFO-523-SU24/final-project # Need to change to your project repo
+        href: https://github.com/INFO523-Fall25-101-201/final-project-josh-dunlap-solo
     left:
       - text: Project
         href: index.qmd
