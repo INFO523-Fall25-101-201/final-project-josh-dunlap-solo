@@ -1,11 +1,11 @@
 ---
-title: "Project Title"
+title: "Finding and Measuring the Temporality Dimension in Historical Static Word Embedding Models"
 subtitle: "INFO 523 - Final Project"
 author: 
-  - name: "Team name - Team member 1, Team member 2,..."
+  - name: "Joshua Dunlap"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Project description"
+description: "Builds decade-by-decade static word embedding models on historical NYT data and finds a temporality dimension within these models"
 format:
    html:
     code-tools: true
@@ -20,4 +20,4 @@ jupyter: python3
 
 ## Abstract
 
-Add project abstract here.
+This project builds decade-by-decade static word embedding models on historical NYT data and finds a temporality dimension within these models. In this sense, the project engages the question of temporality in two ways. First, it demonstrates that static word embedding models trained on historical corpora embed not just linguistic and syntactic information, but also historical information; the static embedding of the 1880s differs meaningfully from the static embedding of the 1930s, in part due to the social, cultural, political, and technological changes of the intervening decades. Second, by finding a dimension of temporality within each static word embedding model through averaging the distance between temporal antonym pairs (e.g. future/past) the project also allows for the mapping of language along the continuum of temporality _from the historical perspective of a given decade_.
